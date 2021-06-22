@@ -69,6 +69,7 @@ body{
     border-bottom-color: darkblue;
     border-bottom: solid;
 }
+
 .swiit-user{
     width: 100%;
     margin: 0px;
@@ -79,21 +80,21 @@ body{
     border-bottom: solid;
 }
 
-.tr-links{
+/* .tr-links{
     margin: 0px;
     padding: 0px;
     align-items: center;
     height: 42px;
     height: min-content;
-}
+} */
 
-.td-btn{
+/* .td-btn{
     margin: 0px;
     padding: 0px;
     align-items: center;
     font-size: 12px;
     height: min-content;
-}
+} */
 
 .btn-D{
     margin: 0px;

@@ -1,0 +1,35 @@
+<head>
+  <title>
+    Swiiter
+  </title>  
+  <%= stylesheet_link_tag "show.css" %>
+</head>
+<body>
+  <div class="container">
+    <div class="navbar" id="main-navbar">
+      <h1>Swiiter</h1>
+    </div>
+    <div class="mainbody">
+      <p><%= notice %></p><br>
+      <div class="col1">
+        <p class="swiit-user">User: <%= @swiit.user %> </p>
+        <br>
+        <p class="swiit-user">N. Swiits :<%= @swiit.id.count %></p>
+      </div>
+      <div class="col2">
+        <h2>Write your new Swiit</h2>
+        <%= render 'form'%>
+      </div>
+      <div class="col3">
+        <table>
+          <tr>
+            <td><%= link_to "Swiit home ", switters_path class: "btn-new"%> </td>
+          <tr>     
+        </table>
+      </div>    
+    </div>
+  </div>
+</body>
+<footer>
+  <h3>Enjoy Switter</h3>
+</footer>
