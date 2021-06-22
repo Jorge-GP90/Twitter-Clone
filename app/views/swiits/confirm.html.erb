@@ -2,7 +2,7 @@
   <title>
     Swiiter
   </title>  
-  <%= stylesheet_link_tag "form.css" %>
+  <%= stylesheet_link_tag "confirm.css" %>
 </head>
 <body>
   <div class="container">
@@ -18,7 +18,7 @@
       </div>
       <div class="col2">
         <h3>Send with the following contents</h3>
-        <%= form_with(model: @swiit, url: switters_path, local: true) do |form| %>
+        <%= form_with(model: @swiit, url: swiits_path, local: true) do |form| %>
           <%= form.hidden_field :user class="swiit-user" %>
           <%= form.hidden_field :content class="swiit-user" %>
           <p>user:<%= @swiit.user class="swiit-user"%></p>
@@ -30,7 +30,7 @@
       <div class="col3">
         <table>
           <tr>
-            <td><%= link_to "Return to Switter list screen", switters_path class: "btn-new"%> </td>
+            <td><%= link_to "Return to swiit list screen", swiits_path class: "btn-new"%> </td>
           <tr>     
         </table>
       </div>    
@@ -38,5 +38,5 @@
   </div>
 </body>
 <footer>
-  <h3>Enjoy Switter</h3>
+  <h3>Enjoy swiit</h3>
 </footer>

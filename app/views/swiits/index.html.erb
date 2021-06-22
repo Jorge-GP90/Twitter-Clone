@@ -28,9 +28,9 @@
                 <td></td>
             </tr>
             <tr class="tr-links">
-                <td class="td-btn"><%= link_to 'Details', switter_path(swiit.id), class: "btn-D" %></td>
-                <td class="td-btn"><%= link_to 'Edit', edit_switter_path(swiit.id), data: { confirm: 'Can I really edit it?' }, class: "btn-D"%></td>
-                <td class="td-btn"><%= link_to 'Delete ', switter_path(swiit.id), method: :delete, data: { confirm: 'Are you sure to delete it?' }, class: "btn-D"%></td>
+                <td class="td-btn"><%= link_to 'Details', swiit_path(swiit.id), class: "btn-D" %></td>
+                <td class="td-btn"><%= link_to 'Edit', edit_swiit_path(swiit.id), data: { confirm: 'Can I really edit it?' }, class: "btn-D"%></td>
+                <td class="td-btn"><%= link_to 'Delete ', swiit_path(swiit.id), method: :delete, data: { confirm: 'Are you sure to delete it?' }, class: "btn-D"%></td>
             </tr>
             <% end %>
             </table>
@@ -38,7 +38,7 @@
       <div class="col3">
         <table>
           <tr>
-            <td><%= link_to 'Post new Swiit ', new_switter_path, class: "btn-new" %> </td>
+            <td><%= link_to 'Post new Swiit ', new_swiit_path, class: "btn-new" %> </td>
           <tr>     
         </table>
       </div>    
@@ -46,5 +46,5 @@
   </div>
 </body>
 <footer>
-  <h3>Enjoy Switter</h3>
+  <h3>Enjoy swiit</h3>
 </footer>

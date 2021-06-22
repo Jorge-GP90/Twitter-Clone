@@ -1,12 +1,16 @@
+
 class SwiitsController < ApplicationController
   before_action :set_swiit, only: [:show, :edit, :update, :destroy]
-  def index
-    @swiit = Swiit.all.order(created_at: :asc)
-  end
+  
 
   def new
     @swiit = Swiit.new
   end
+
+  def index
+    @swiit = Swiit.all.order(created_at: :asc)
+  end
+
 
   def create
     @swiit = Swiit.new(swiit_params)
@@ -14,7 +18,7 @@ class SwiitsController < ApplicationController
       render :new
     else
       if @swiit.save
-        redirect_to switters_path, notice: "New Swiit have been created!"
+        redirect_to swiits_path, notice: "New Swiit have been created!"
       else  
       render :new
       end
@@ -28,7 +32,7 @@ class SwiitsController < ApplicationController
 
   def update
     if @swiit.update(swiit_params)
-      redirect_to switters_path, notice: "have been edited the Swiit N.#{@swiit.id} from user: #{ @swiit.user }!"
+      redirect_to swiits_path, notice: "have been edited the Swiit N.#{@swiit.id} from user: #{ @swiit.user }!"
     else
       render :edit
     end
@@ -42,7 +46,7 @@ class SwiitsController < ApplicationController
 
   def destroy
     @swiit.destroy
-    redirect_to switters_path, notice:"have been deleted the swiit from user: #{@swiit.id}.-#{ @swiit.user }!"
+    redirect_to swiits_path, notice:"have been deleted the swiit from user: #{@swiit.id}.-#{ @swiit.user }!"
   end
 
   private

@@ -4,7 +4,7 @@ require "rails/all"
 
 Bundler.require(*Rails.groups)
 
-module Swiit
+module SwiitRails
   class Application < Rails::Application
     config.load_defaults 6.1
     config.time_zone = 'Tokyo'

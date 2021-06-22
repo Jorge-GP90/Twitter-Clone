@@ -7,20 +7,20 @@ default: &default
 development:
   <<: *default
   adapter: postgresql
-  database: swiit_development
+  database: swiit_rails_development
   host: localhost
   port: 5432
 
 test:
   <<: *default
   adapter: postgresql
-  database: swiit_test
+  database: swiit_rails_test
 
 production:
   <<: *default
-  database: swiit_production
-  username: swiit
-  password: <%= ENV['SWIIT_DATABASE_PASSWORD'] %>
+  database: swiit_rails_production
+  username: swiit_rails
+  password: <%= ENV['SWIIT_RAILS_DATABASE_PASSWORD'] %>
 
 
   

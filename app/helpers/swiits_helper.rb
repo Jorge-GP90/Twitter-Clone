@@ -1,9 +1,9 @@
 module SwiitsHelper
     def choose_new_or_edit
         if action_name == 'new' || action_name == 'create'
-          confirm_switters_path
+          confirm_swiits_path
         elsif action_name == 'edit'
-          switter_path
+          swiit_path
         end
     end
 end
