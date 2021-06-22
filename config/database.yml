@@ -21,3 +21,6 @@ production:
   database: swiit_production
   username: swiit
   password: <%= ENV['SWIIT_DATABASE_PASSWORD'] %>
+
+
+  
