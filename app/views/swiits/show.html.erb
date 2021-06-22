@@ -1,18 +1,18 @@
 <div class="container">
   <div class="navbar" id="main-navbar">
-    <h1>Swiiter</h1>
+    <h1>Swiit</h1>
   </div>
   <div class="mainbody">
     <p><%= notice %></p><br>
     <div class="col1">
-      <p class="swiit-user">User: <%= @swiit.user %> </p>
+      <p class="swiit-user">User: <%= @swiit.id %> </p>
       <br>
       <p class="swiit-user">N. Swiits :<%= @swiit.id.count %></p>
     </div>
     <div class="col2">
       <h1>Swiit details screen</h1><br>
-      <p>user: <%= @swiit.user class: "swiit_user"%></p><br>
-      <p>Content: <%= @swiit.content class: "swiit_content" %></p>
+      <p>user: <%= @swiit.id, class: "swiit_user"%></p><br>
+      <p>Content: <%= @swiit.content, class: "swiit_content" %></p>
       
     </div>
     <div class="col3">

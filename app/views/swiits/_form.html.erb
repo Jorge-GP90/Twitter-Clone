@@ -4,27 +4,31 @@
     <h1>Swiiter</h1>
   </div>
   <div class="mainbody">
-    <% if @swiit.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= @swiit.errors.count %>There are errors.</h2>
-        <ul>
-          <% @swiit.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
     <p><%= notice %></p><br>
     <div class="col1">
       <p class="swiit-user">N. Swiits :<%= @swiit.id %></p>
     </div>
     <div class="col2">
       <%= form_with(model: @swiit, local: true, url: choose_new_or_edit) do |form| %>
-        <div class="swiit_content">
-          <%= form.label :content %>
-          <%= form.text_area :content, size: "80x10" %>
-        </div>
-        <%= form.submit "Post", class: "btn-D" %>
+      <% if @swiit.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= @swiit.errors.count %>There are errors.</h2>
+        <ul>
+        <% @swiit.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+      <% end %>
+      <div class="swiit_user">
+      <%# <%= form.label :user %>
+      <%# <%= form.text_field :user %> 
+      </div>
+      <div class="swiit_content">
+      <%= form.label :content %>
+      <%= form.text_area :content, size: "80x10" %>
+      </div>
+      <%= form.submit "Post" %>
       <% end %>
     </div>
     <div class="col3">
