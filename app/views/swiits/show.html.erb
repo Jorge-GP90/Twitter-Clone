@@ -1,37 +1,26 @@
-<head>
-  <title>
-    Swiiter
-  </title>  
-  <%= stylesheet_link_tag "show.css" %>
-</head>
-<body>
-  <div class="container">
-    <div class="navbar" id="main-navbar">
-      <h1>Swiiter</h1>
-    </div>
-    <div class="mainbody">
-      <p><%= notice %></p><br>
-      <div class="col1">
-        <p class="swiit-user">User: <%= @swiit.user %> </p>
-        <br>
-        <p class="swiit-user">N. Swiits :<%= @swiit.id.count %></p>
-      </div>
-      <div class="col2">
-        <h1>Swiit details screen</h1><br>
-        <p>user: <%= @swiit.user class: "swiit_user"%></p><br>
-        <p>Content: <%= @swiit.content class: "swiit_content" %></p>
-        
-      </div>
-      <div class="col3">
-        <table>
-          <tr>
-            <td><%= link_to "Swiit home ", swiits_path class: "btn-new"%> </td>
-          <tr>     
-        </table>
-      </div>    
-    </div>
+<div class="container">
+  <div class="navbar" id="main-navbar">
+    <h1>Swiiter</h1>
   </div>
-</body>
-<footer>
-  <h3>Enjoy swiit</h3>
-</footer>
+  <div class="mainbody">
+    <p><%= notice %></p><br>
+    <div class="col1">
+      <p class="swiit-user">User: <%= @swiit.user %> </p>
+      <br>
+      <p class="swiit-user">N. Swiits :<%= @swiit.id.count %></p>
+    </div>
+    <div class="col2">
+      <h1>Swiit details screen</h1><br>
+      <p>user: <%= @swiit.user class: "swiit_user"%></p><br>
+      <p>Content: <%= @swiit.content class: "swiit_content" %></p>
+      
+    </div>
+    <div class="col3">
+      <table>
+        <tr>
+          <td><%= link_to "Swiit home ", swiits_path, class: "btn-new"%> </td>
+        <tr>     
+      </table>
+    </div>    
+  </div>
+</div>

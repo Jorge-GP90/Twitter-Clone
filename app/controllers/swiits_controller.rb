@@ -8,7 +8,7 @@ class SwiitsController < ApplicationController
   end
 
   def index
-    @swiit = Swiit.all.order(created_at: :asc)
+    @swiits = Swiit.all.order(created_at: :asc)
   end
 
 

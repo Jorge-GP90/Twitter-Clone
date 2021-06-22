@@ -1,50 +1,39 @@
-<head>
-  <title>
-    Swiiter
-  </title>  
-  <%= stylesheet_link_tag "index.css" %>
-</head>
-<body>
-  <div class="container">
-    <div class="navbar" id="main-navbar">
-      <h1>Swiiter</h1>
-    </div>
-    <div class="mainbody">
-      <p><%= notice %></p><br>
-      <div class="col1">
-        <p class="swiit-user">User: <%= @swiit.user %> </p>
-        <br>
-        <p class="swiit-user">N. Swiits :<%= @swiit.id.count %></p>
-      </div>
-      <div class="col2">
-         <table class="main-swiits">
-            <tr class="swiit-user">
-              <%= @swiit.user %>
-            </tr>  %>
-            <% @swiit.each do |swiit| %>
-            <tr class="swiit-content">
-                <td colspan="3"><%= swiit.content %></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr class="tr-links">
-                <td class="td-btn"><%= link_to 'Details', swiit_path(swiit.id), class: "btn-D" %></td>
-                <td class="td-btn"><%= link_to 'Edit', edit_swiit_path(swiit.id), data: { confirm: 'Can I really edit it?' }, class: "btn-D"%></td>
-                <td class="td-btn"><%= link_to 'Delete ', swiit_path(swiit.id), method: :delete, data: { confirm: 'Are you sure to delete it?' }, class: "btn-D"%></td>
-            </tr>
-            <% end %>
-            </table>
-      </div>
-      <div class="col3">
-        <table>
-          <tr>
-            <td><%= link_to 'Post new Swiit ', new_swiit_path, class: "btn-new" %> </td>
-          <tr>     
-        </table>
-      </div>    
-    </div>
+<div class="container">
+  <div class="navbar" id="main-navbar">
+    <h1>Swiiter</h1>
   </div>
-</body>
-<footer>
-  <h3>Enjoy swiit</h3>
-</footer>
+  <div class="mainbody">
+    <p><%= notice %></p><br>
+    <div class="col1">
+      <p class="swiit-user">User: <%#= @swiit.user %> </p>
+      <br>
+      <p class="swiit-user">N. Swiits :<%= @swiits.count %></p>
+    </div>
+    <div class="col2">
+        <table class="main-swiits">
+          <tr class="swiit-user">
+            <%#= @swiit.user %>
+          </tr>
+          <% @swiits.each do |swiit| %>
+          <tr class="swiit-content">
+              <td colspan="3"><%= swiit.content %></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr class="tr-links">
+              <td class="td-btn"><%= link_to 'Details', swiit_path(swiit.id), class: "btn-D" %></td>
+              <td class="td-btn"><%= link_to 'Edit', edit_swiit_path(swiit.id), data: { confirm: 'Can I really edit it?' }, class: "btn-D"%></td>
+              <td class="td-btn"><%= link_to 'Delete ', swiit_path(swiit.id), method: :delete, data: { confirm: 'Are you sure to delete it?' }, class: "btn-D"%></td>
+          </tr>
+          <% end %>
+          </table>
+    </div>
+    <div class="col3">
+      <table>
+        <tr>
+          <td><%= link_to 'Post new Swiit ', new_swiit_path, class: "btn-new" %> </td>
+        <tr>     
+      </table>
+    </div>    
+  </div>
+</div>
