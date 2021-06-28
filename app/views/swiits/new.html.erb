@@ -1,22 +1,3 @@
-<div class="container">
-  <div class="navbar" id="main-navbar">
-    <h1>Swiiter</h1>
-  </div>
-  <div class="mainbody">
-    <p><%= notice %></p><br>
-    <div class="col1">
-      <p class="swiit-user">N. Swiits :<%= @swiit.id %></p>
-    </div>
-    <div class="col2">
-      <h2>Write your new Swiit</h2>
-      <%= render 'form'%>
-    </div>
-    <div class="col3">
-      <table>
-        <tr>
-          <td><%= link_to "Swiit home ", swiits_path, class: "btn-new"%></td>
-        <tr>     
-      </table>
-    </div>    
-  </div>
-</div>
+<%= render 'form'%>
+  
+ 

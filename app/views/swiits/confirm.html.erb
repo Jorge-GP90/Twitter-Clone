@@ -5,25 +5,23 @@
   <div class="mainbody">
     <p><%= notice %></p><br>
     <div class="col1">
-      <p class="swiit-user">User: <%= @swiit.id%> </p>
-      <br>
-      <p class="swiit-user">N. Swiits :<%= @swiit.id.count %></p>
+     
     </div>
     <div class="col2">
       <h3>Send with the following contents</h3>
       <%= form_with(model: @swiit, url: swiits_path, local: true) do |form| %>
-        <%# <%= form.hidden_field :user, class="swiit-user" %> 
-        <p><%= form.hidden_field :content, class="swiit-content" %></p>
-        <%# <p>user:<%= @swiit.user, class="swiit-user"%></p>
-        <p>Content:<%= @swiit.content, class="swiit-content" %></p>
-        <%= form.submit  "Post", class: "btn-D" %>
-        <%= form.submit "back", name: 'back', class: "btn-D"%>
+        <%= form.hidden_field :title %>
+        <%= form.hidden_field :content %>
+        <p>title:<%= @swiit.title %></p>
+        <p>Content:<%= @swiit.content %></p>
+        <%= form.submit  "post" %>
+        <%= form.submit "back", name: 'back' %>
       <% end %>
     </div>
     <div class="col3">
       <table>
         <tr>
-          <td><%= link_to "Return to swiit list screen", swiits_path, class: "btn-new"%> </td>
+          <td><%= link_to "Swiit home", swiits_path, class: "btn-new"%> </td>
         <tr>     
       </table>
     </div>    

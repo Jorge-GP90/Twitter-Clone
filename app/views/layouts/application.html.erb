@@ -7,9 +7,18 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+    <div class="container">
+      <div class="navbar" id="main-navbar">
+            <h1>Swiit</h1>
+      </div>
+      <%= yield %>    
+    </div>
   </body>
+  <footer>
+    <h1>Keep sharing Swiits!</h1>
+  </footer>
 </html>
+

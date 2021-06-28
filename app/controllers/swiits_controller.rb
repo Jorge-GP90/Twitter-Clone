@@ -1,60 +1,58 @@
-
 class SwiitsController < ApplicationController
-  before_action :set_swiit, only: [:show, :edit, :update, :destroy]
+    before_action :set_swiit, only: [:show, :edit, :update, :destroy]
+    def new
+      @swiit = Swiit.new
+    end
   
-
-  def new
-    @swiit = Swiit.new
-  end
-
-  def index
-    @swiits = Swiit.all.order(created_at: :asc)
-  end
-
-
-  def create
-    @swiit = Swiit.new(swiit_params)
-    if params[:back]
-      render :new
-    else
-      if @swiit.save
-        redirect_to swiits_path, notice: "New Swiit have been created!"
-      else  
-      render :new
+    def index
+      @swiits = Swiit.all
+    end
+  
+  
+    def create
+      @swiit = Swiit.new(swiit_params)
+      if params[:back]
+        render :new
+      else
+        if @swiit.save
+          redirect_to swiits_path, notice: "New Swiit have been created!"
+        else  
+        render :new
+        end
       end
     end
-  end
+    
+    def confirm
+      @swiit = Swiit.new(swiit_params)
+      render :new if @swiit.invalid?
+    end
   
-  def confirm
-    @swiit = Swiit.new(swiit_params)
-    render :new if @swiit.invalid?
-  end
+    def update
+      if @swiit.update(swiit_params)
+        redirect_to swiits_path, notice: "have been edited the Swiit N.#{@swiit.id} from title: #{ @swiit.title }!"
+      else
+        render :edit
+      end
+    end
+  
+    def edit
+    end
 
-  def update
-    if @swiit.update(swiit_params)
-      redirect_to swiits_path, notice: "have been edited the Swiit N.#{@swiit.id} from title: #{ @swiit.title }!"
-    else
-      render :edit
+    def show
+    end
+  
+    def destroy
+      @swiit.destroy
+      redirect_to swiits_path, notice:"have been deleted the swiit from title: #{@swiit.id}.-#{ @swiit.title }!"
+    end
+  
+    private
+    def swiit_params
+      params.require(:swiit).permit(:title, :content)
+    end
+  
+    def set_swiit
+      @swiit = Swiit.find(params[:id])
     end
   end
-
-  def edit
-  end
-
-  def show
-  end
-
-  def destroy
-    @swiit.destroy
-    redirect_to swiits_path, notice:"have been deleted the swiit from title: #{@swiit.id}.-#{ @swiit.title }!"
-  end
-
-  private
-  def swiit_params
-    params.require(:swiit).permit(:title, :content)
-  end
-
-  def set_swiit
-    @swiit = Swiit.find(params[:id])
-  end
-end
+  

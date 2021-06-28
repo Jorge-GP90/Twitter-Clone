@@ -1,24 +1,2 @@
-<div class="container">
-  <div class="navbar" id="main-navbar">
-    <h1>Swiiter</h1>
-  </div>
-  <div class="mainbody">
-    <p><%= notice %></p><br>
-    <div class="col1">
-      <p class="swiit-title">title: <%= @swiit.id %> </p>
-      <br>
-      <p class="swiit-title">N. Swiits :<%= @swiit.id.count %></p>
-    </div>
-    <div class="col2">
-      <h2>Edit your swiit</h2>
-      <%= render 'form'%>
-    </div>
-    <div class="col3">
-      <table>
-        <tr>
-          <td><%= link_to "Swiit home ", swiits_path, class: "btn-new"%> </td>
-        <tr>     
-      </table>
-    </div>    
-  </div>
-</div>
+<%= render 'form'%>
+

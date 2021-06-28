@@ -7,7 +7,7 @@ body{
 .container{
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    overflow-y: auto;
     background-color: aqua;
 }
 
@@ -26,7 +26,7 @@ body{
     width: 1024px;
     height: auto;
     margin: 5px auto 5px auto;
-    overflow: hidden;
+    overflow-y: auto;
     background-color: transparent;
     text-align: center;
 }
@@ -39,25 +39,44 @@ body{
     background-color: ghostwhite;
     text-align: left;
     border-radius: 5px;
+    margin-top: 0.1%;
 }
 
 .col2{
     width: 50%;
     margin-left: 2%;
     float: left;
+    height: 1000px;
+    background-color: ghostwhite;
+    text-align: center;
+    border-radius: 5px;
+    overflow-y: auto;
+    margin-top: 0.1%;
+}
+
+.show{
+    width: 50%;
+    float: left;
+    margin-left: 2%;
+    margin-top: 0.1%;
     height: auto;
     background-color: ghostwhite;
     text-align: center;
     border-radius: 5px;
+    overflow-y: auto;
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .main-swiits{
+    display: block;
     float: left;
     width: 100%;
     margin: 0px;
     padding: 0px;
     font-size: 15px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow-y: auto;
 }
 
 .swiit-content{
@@ -68,8 +87,10 @@ body{
     height: 100px;
     border-bottom-color: darkblue;
     border-bottom: solid;
-}
-.swiit-user{
+    text-size-adjust: inherit;
+} 
+
+.swiit-title{
     width: 100%;
     margin: 0px;
     padding: 0px;
@@ -79,13 +100,18 @@ body{
     border-bottom: solid;
 }
 
+.tr-displays{
+    overflow-y: auto;
+}
+
 .tr-links{
     margin: 0px;
     padding: 0px;
     align-items: center;
     height: 42px;
     height: min-content;
-}
+    overflow-y: auto;
+} 
 
 .td-btn{
     margin: 0px;
@@ -140,6 +166,7 @@ body{
     text-align: right;
     border-radius: 5px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 0.1%;
 }
 
 .btn-new{
@@ -176,7 +203,9 @@ body{
 
 
 footer{
-    max-height: 20px;
+    
     text-align: center;
-    border-top: cornsilk;
+    background-color: cornsilk;
+    margin: 0%;
+    padding: 0%;
 }

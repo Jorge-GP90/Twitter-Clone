@@ -1,5 +1,4 @@
 class Swiit < ApplicationRecord
     validates :title, presence: true
-    validates :content, length: {minimum: 1}, presence: { message: "Did you forget writing, try to write something again please" }
-    validates :content, length: {maximum: 140}, presence: { message: "Your Swiit is too long (less than 140 characters please) try again" } 
+    validates :content, length: {minimum: 1}, length: {maximum: 140}, presence: { message: " is too long (Max. 140 characters) or is not writen yet." }
 end
